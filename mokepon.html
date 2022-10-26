@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>PREGUNTONES!</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<section id="seleccionar-mascota">
+<h1 class="titulo">Preguntones :p</h1>
+<h2 class="subtitulo">Elige tu mascota:</h2>
+<div id='contenedorTarjetas' class="tarjetas">
+</div>
+<button id="boton-mascota">Seleccionar</button>
+</section>
+<section id="ver-mapa">
+<h1 class="titulo">Recorre el mapa con tu mascota</h1>
+<div style="display: flex">
+    <h4 id="victorias" style="margin-right: 15px">Victorias: 0</h4>
+    <h4 id="derrotas" >Derrotas: 0</h4>
+</div>
+<canvas id="mapa"></canvas>
+<div style="display: flex; justify-content: center;flex-direction: column;">
+    <button class="btn-mover" onmouseup="detenerMovimiento()" onmousedown="moverArriba()">Arriba</button>
+    <div style="display: flex;">
+        <button class="btn-mover" onmouseup="detenerMovimiento()" onmousedown="moverIzquierda()">Izquierda</button>
+        <button class="btn-mover" onmouseup="detenerMovimiento()" onmousedown="moverDerecha()">Derecha</button>
+    </div>
+    <button class="btn-mover" onmouseup="detenerMovimiento()" onmousedown="moverAbajo()">Abajo</button>
+</div>
+</section>
+<section id="seleccionar-ataque">
+<h1 class="titulo">Preguntones :p</h1>
+<h2 class="subtitulo" id="subtitulo">Responde la Pregunta:</h2>
+<div id='contenedorAtaques' class="tarjetas-ataques">
+    <h3 id="pregunta" style="color: #ffc000;"></h3>
+    <div>
+        <div style="margin: 20px;">
+            <input type="radio" name="respuesta" value="A" id="A">
+            <label id="labelA"  for="A"></label> 
+        </div>   
+        <div style="margin: 20px;">
+            <input type="radio" name="respuesta"  value="B" id="B">
+            <label id="labelB" for="B"></label>
+        </div>
+        <div style="margin: 20px;">
+            <input type="radio" name="respuesta"  value="C" id="C">
+            <label id="labelC" for="C"></label>
+        </div>
+        <div style="margin: 20px;">
+            <input type="radio" name="respuesta"  value="D" id="D">
+            <label id="labelD" for="D"></label>
+        </div>
+    </div>
+    <button id="btn-responder" onclick="respuestaEnviada();" class="btn-responder">Responder</button>
+</div>
+<div id="mensajes">
+<p id="resultado" style="color: black;">Mucha suerte</p>
+
+<section id="reiniciar">
+<button id="boton-reiniciar">Reiniciar</button>
+</section>
+</div>
+<button id="btn-reiniciar" onclick="reiniciarMateria();">Volver a escoger</button>
+<div class="ataques">
+<div class="ataques-jugador">
+<p id="vidas-jugador"></p>
+<p id="mascota-jugador"></p>
+<div id="ataques-del-jugador"></div>
+</div>
+<div class="ataques-enemigo">
+<p id="vidas-enemigo"></p>
+<p id="mascota-enemigo"></p>
+<div id="ataques-del-enemigo"></div>
+</div>
+</div>
+</section>
+<script src="./js/mokepon.js"></script>
+</body>
+</html>
